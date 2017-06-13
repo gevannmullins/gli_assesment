@@ -1,0 +1,16 @@
+/* CSS Document */
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.section_title {
+	position: relative;
+	width: 100%;
+	font-size: 22px;
+	text-align: center;
+	color: red;
+	
+}
+
