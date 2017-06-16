@@ -1,6 +1,9 @@
 <?php
+
 $document_root = $_SERVER['DOCUMENT_ROOT'];
 $server_host = $_SERVER['HTTP_HOST'];
+
+// database connection
 define( 'DB_HOST', 'localhost' ); // set database host
 define( 'DB_USER', 'admin' ); // set database user
 define( 'DB_PASS', 'admin' ); // set database password
@@ -8,9 +11,11 @@ define( 'DB_NAME', 'gli' ); // set database name
 define( 'SEND_ERRORS_TO', 'you@yourwebsite.com' ); //set email notification email address
 define( 'DISPLAY_DEBUG', true ); //display db errors?
 
+// new instance of the database class
 require_once( '../includes/class_db/class.db.php' );
 $database = new DB();
 
+// new instance of the lotto class
 require_once('processes/lotto_class.php');
 $lotto_player = new Lotto_Player();
 
@@ -26,24 +31,22 @@ $lotto_player = new Lotto_Player();
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 play_result_container">
-
-    </div>
-  </div>
-  <div class="row">
     <div class="col-xs-12 text-center buttons_container">
       <a href="section_1/processes/play_lotto.php" class="ajax_btn play_lotto_btn">Play Lotto</a>
       <a href="section_1/processes/export_results.php" class="ajax_btn export_results_btn">Play Lotto</a>
     </div>
   </div>
   <div class="row">
+    <div class="col-xs-12 play_result_container">
+      <!-- play lotto result to display here -->
+    </div>
+  </div>
+  <div class="row">
     <div class="col-xs-12 latest_result_container">
-
       <h3>Latest 10 Results</h3>
       <div class="latest_results">
-
+        <!-- latest 10 lotto results to display here -->
       </div>
-
     </div>
   </div>
 
@@ -52,21 +55,19 @@ $lotto_player = new Lotto_Player();
 <script language="javascript">
 $(document).ready(function(){
 
-  // play button
+  // play button action
   $('.play_lotto_btn').on('click', function(e){
     e.preventDefault();
     // get all needed values
     var href = $(this).attr('href');
-
     $.ajax({
       url: href,
       success: function(result){
         $(".play_result_container").html(result);
       }
     });
-    // refresh the latest results
+    // refresh the latest results when the play lotto button is clicked
     $('.latest_results').load('section_1/processes/get_last_ten_results.php');
-
   });
 
   // display latest 10 results

@@ -10,25 +10,26 @@ require_once( '../includes/class_db/class.db.php' );
 $database = new DB();
 
 
-
-
-
-
-
-
 ?>
 
-		<div class="container">
+<div class="container">
 
-			<div class="row">
-				<div class="col-xs-12">
-					<h2 class="section_title">Section 2 - Race Track</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12">
-
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h2 class="section_title">Section 2 - Race Track</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
 
 		</div>
+	</div>
+
+</div>
+
+<script language="javascript">
+$(document).ready(function(){
+
+
+});
+</script>
