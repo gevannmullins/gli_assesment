@@ -17,7 +17,6 @@ $database = new DB();
  */
 $query = "SELECT lotto_numbers, powerball_numbers, date_time FROM lotto_results ORDER BY date_time DESC LIMIT 10";
 $results = $database->get_results( $query );
-
 ?>
 
 <div class="container">
