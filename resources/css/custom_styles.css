@@ -11,6 +11,11 @@ body {
 	font-size: 22px;
 	text-align: center;
 	color: red;
-	
+
 }
 
+.display_inline {
+	/*display: inline-block;*/
+	display: inline;
+	/*display: inline-flex;*/
+}
